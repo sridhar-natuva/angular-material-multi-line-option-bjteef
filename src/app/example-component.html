@@ -1,0 +1,25 @@
+<form class="example-form">
+
+  <mat-form-field class="example-full-width">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of options" [value]="option.value" multiLineOption>
+        <h4 mat-line>{{ option.value }}</h4>
+        <p mat-line>{{ option.description }}</p>
+        <p mat-line>{{ option.description }}</p>
+      </mat-option>
+    </mat-autocomplete>
+    <input placeholder="Pick one" matInput [formControl]="myControl" [matAutocomplete]="auto">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Favorite food</mat-label>
+    <mat-select [formControl]="mySelect">
+      <mat-select-trigger>{{ mySelect.value }}</mat-select-trigger>
+      <mat-option *ngFor="let food of foods" [value]="food.value" multiLineOption>
+        <h4 mat-line>{{ food.value }}</h4>
+        <p mat-line>{{ food.description }}</p>
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</form>
